@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+sortwise/__init__.py
+sortwise/classifier.py
+sortwise/cli.py
+sortwise/config.py
+sortwise/history.py
+sortwise/organizer.py
+sortwise/watcher.py
+sortwise.egg-info/PKG-INFO
+sortwise.egg-info/SOURCES.txt
+sortwise.egg-info/dependency_links.txt
+sortwise.egg-info/entry_points.txt
+sortwise.egg-info/requires.txt
+sortwise.egg-info/top_level.txt
+tests/test_classifier.py
+tests/test_organizer.py

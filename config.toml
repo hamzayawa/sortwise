@@ -1,0 +1,70 @@
+# SortWise configuration. Paths support ~ for your home directory.
+[paths]
+watch = "~/Downloads"
+destination = "~/Downloads/Organized"
+database = "~/.local/share/sortwise/history.sqlite3"
+
+[behavior]
+# Wait until size and modification time stop changing.
+stable_seconds = 3
+poll_interval_seconds = 1
+# Files with these suffixes are treated as incomplete downloads.
+incomplete_suffixes = [".crdownload", ".part", ".partial", ".download", ".tmp"]
+# Unknown items are moved to Miscellaneous. Set to false to leave them in Downloads.
+organize_unknown = true
+
+# Ordered rules: the first matching rule wins.
+# Match either a filename suffix or a MIME type prefix.
+[[rules]]
+name = "Images"
+extensions = [".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp", ".tiff", ".ico", ".heic"]
+mime_prefixes = ["image/"]
+folder = "Images"
+
+[[rules]]
+name = "Video"
+extensions = [".mp4", ".mkv", ".mov", ".avi", ".webm", ".m4v", ".mpeg", ".mpg"]
+mime_prefixes = ["video/"]
+folder = "Videos"
+
+[[rules]]
+name = "Audio"
+extensions = [".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a", ".opus"]
+mime_prefixes = ["audio/"]
+folder = "Audio"
+
+[[rules]]
+name = "PDF documents"
+extensions = [".pdf"]
+mime_prefixes = ["application/pdf"]
+folder = "Documents/PDF"
+
+[[rules]]
+name = "Office documents"
+extensions = [".doc", ".docx", ".odt", ".rtf", ".txt", ".md", ".ppt", ".pptx", ".odp", ".xls", ".xlsx", ".ods"]
+mime_prefixes = []
+folder = "Documents"
+
+[[rules]]
+name = "Datasets"
+extensions = [".csv", ".tsv", ".parquet", ".feather", ".jsonl", ".xlsx", ".xls"]
+mime_prefixes = []
+folder = "Data"
+
+[[rules]]
+name = "Code and development files"
+extensions = [".py", ".js", ".ts", ".tsx", ".jsx", ".html", ".css", ".scss", ".json", ".yaml", ".yml", ".toml", ".sql", ".ipynb", ".r", ".jl", ".java", ".c", ".cpp", ".h", ".rs", ".go", ".sh"]
+mime_prefixes = []
+folder = "Code"
+
+[[rules]]
+name = "Installers and packages"
+extensions = [".deb", ".rpm", ".appimage", ".bin", ".iso"]
+mime_prefixes = []
+folder = "Installers"
+
+[[rules]]
+name = "Archives"
+extensions = [".zip", ".tar", ".gz", ".tgz", ".bz2", ".xz", ".7z", ".rar"]
+mime_prefixes = ["application/zip", "application/x-tar", "application/gzip", "application/x-7z-compressed", "application/vnd.rar"]
+folder = "Archives"

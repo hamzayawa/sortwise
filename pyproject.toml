@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sortwise"
+version = "0.1.0"
+description = "A safe, configurable Downloads folder organizer for Linux"
+requires-python = ">=3.11"
+dependencies = ["watchdog>=4.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+sortwise = "sortwise.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
